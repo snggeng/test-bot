@@ -43,6 +43,10 @@ app.post('/webhook/', function (req, res) {
 				sendUniqueMessage(sender, "hi, i'm test bot, what can i do for you?")
 				continue
 			}
+			if (text === 'laundry') {
+				sendUniqueMessage(sender, "there are 10 laundry machines available in the laundromat right now. Would you like to do your laundry now?")
+				continue
+			}
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
