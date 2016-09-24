@@ -39,6 +39,10 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 			sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
+			if (text === 'hi') {
+				sendUniqueMessage(sender, "hi, i'm test bot, what can i do for you?")
+				continue
+			}
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
@@ -55,6 +59,26 @@ app.post('/webhook/', function (req, res) {
 const token = "EAAIvrP1hOZAoBADxzZCtonZB2YyH3ZA2J0KJuVdtzBzCtZBL4qYPGMkZBoBT1u7gotTtaRkc7PfMShLg5xNRoeuH7k4Caot2cSOiQRoe5ROY15LuqAJFsWxZBSdZBc7shts5yjKVHyPSSz7uoIWr4ZBHsBNyQqZBpyEZCFBpECdYuW6LQZDZD"
 
 function sendTextMessage(sender, text) {
+	let messageData = { text:text }
+
+	request({
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+		qs: {access_token:token},
+		method: 'POST',
+		json: {
+			recipient: {id:sender},
+			message: messageData,
+		}
+	}, function(error, response, body) {
+		if (error) {
+			console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+			console.log('Error: ', response.body.error)
+		}
+	})
+}
+
+function sendUniqueMessage(sender, text) {
 	let messageData = { text:text }
 
 	request({
