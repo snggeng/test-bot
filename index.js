@@ -44,7 +44,11 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 			if (text === 'laundry') {
-				sendUniqueMessage(sender, "there are 10 laundry machines available in the laundromat right now. Would you like to do your laundry now?")
+				sendUniqueMessage(sender, "there are 5 laundry machines available in the laundromat right now. Please select a machine: 1, 2, 3, 4, 5")
+				continue
+			}
+			if (text === 'machine 1') {
+				sendUniqueMessage(sender, "You have selected machine 1. Your laundry will be completed in 30mins from now, at " + Date().getTime() )
 				continue
 			}
 		}
