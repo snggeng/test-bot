@@ -48,7 +48,7 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 			if (text === 'machine 1') {
-				sendUniqueMessage(sender, "You have selected machine 1. Your laundry will be completed in 30mins from now, at " + Date().getTime() )
+				sendUniqueMessage(sender, "You have selected machine 1. Your laundry will be completed in 30mins from now, at " + Date().now() )
 				continue
 			}
 		}
