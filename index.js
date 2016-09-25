@@ -142,7 +142,6 @@ function sendGenericMessage(sender) {
 				}, {
 					"title": "Day 2",
 					"subtitle": "the best shit",
-					"image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
 					"buttons": [{
 						"type": "postback",
 						"title": "Confirm",
