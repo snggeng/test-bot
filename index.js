@@ -138,18 +138,18 @@ function sendGenericMessage(sender) {
 						"url": "https://www.messenger.com",
 						"title": "web url"
 					}, {
-						"type": "text",
-						"title": "22/06/2016",
-						"payload": "Payload for first element in a generic bubble",
+						"type": "postback",
+						"title": "Confirm",
+						"payload": "DEVELOPER_DEFINED_PAYLOAD",
 					}],
 				}, {
-					"title": "Jack",
-					"subtitle": "15/03/2016",
+					"title": "Second card",
+					"subtitle": "Element #2 of an hscroll",
 					"image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
 					"buttons": [{
-						"type": "text",
-						"title": "Order",
-						"payload": "Payload for second element in a generic bubble",
+						"type": "postback",
+						"title": "Confirm",
+						"payload": "DEVELOPER_DEFINED_PAYLOAD",
 					}],
 				}]
 			}
