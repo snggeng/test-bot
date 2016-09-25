@@ -157,11 +157,8 @@ function sendGenericMessage(sender) {
 }
 
 function sendQuickReplyMessage(sender) {
+	{
 	let messageData = {
-		"recipient":{
-		    "id":"USER_ID"
-		  },
-		  "message":{
 		    "text":"Pick a color:",
 		    "quick_replies":[
 		      {
@@ -178,7 +175,6 @@ function sendQuickReplyMessage(sender) {
 		      }
 		    ]
 		  }
-		}
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
 		qs: {access_token:token},
@@ -195,6 +191,7 @@ function sendQuickReplyMessage(sender) {
 		}
 	})
 }
+
 
 // spin spin sugar
 app.listen(app.get('port'), function() {
