@@ -140,7 +140,7 @@ function sendGenericMessage(sender) {
 					}, {
 						"type": "postback",
 						"title": "Postback",
-						"payload": "DEVELOPER_DEFINED_PAYLOAD",
+						"payload": "hi",
 					}],
 				}, {
 					"title": "Second card",
@@ -149,7 +149,7 @@ function sendGenericMessage(sender) {
 					"buttons": [{
 						"type": "postback",
 						"title": "Postback",
-						"payload": "DEVELOPER_DEFINED_PAYLOAD",
+						"payload": "hi",
 					}],
 				}]
 			}
