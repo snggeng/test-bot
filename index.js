@@ -141,7 +141,6 @@ function sendGenericMessage(sender) {
 					}],
 				}, {
 					"title": "Day 2",
-					"subtitle": "the best shit",
 					"buttons": [{
 						"type": "postback",
 						"title": "Confirm",
