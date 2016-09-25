@@ -41,7 +41,7 @@ app.post('/webhook/', function (req, res) {
 			sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
 			if (text === 'hi') {
 				sendUniqueMessage(sender, "hi, i'm test bot, what can i do for you?")
-				sendQuickReplyMessage()
+				sendQuickReplyMessage(sender)
 				continue
 			}
 			if (text === 'haircut') {
