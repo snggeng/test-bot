@@ -124,32 +124,29 @@ function sendUniqueMessage(sender, text) {
 }
 
 function sendGenericMessage(sender) {
+	//ajax call here
 	let messageData = {
 		"attachment": {
 			"type": "template",
 			"payload": {
 				"template_type": "generic",
 				"elements": [{
-					"title": "First card",
-					"subtitle": "Element #1 of an hscroll",
+					"title": "Day 1",
+					"subtitle": "the nastiest shit",
 					"image_url": "http://messengerdemo.parseapp.com/img/rift.png",
 					"buttons": [{
-						"type": "web_url",
-						"url": "https://www.messenger.com",
-						"title": "web url"
-					}, {
 						"type": "postback",
-						"title": "Postback",
-						"payload": "hi",
+						"title": "Confirm",
+						"payload": "Thank you!",
 					}],
 				}, {
-					"title": "Second card",
-					"subtitle": "Element #2 of an hscroll",
+					"title": "Day 2",
+					"subtitle": "the best shit",
 					"image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
 					"buttons": [{
 						"type": "postback",
-						"title": "Order",
-						"payload": "hi",
+						"title": "Confirm",
+						"payload": "Thank you!",
 					}],
 				}]
 			}
