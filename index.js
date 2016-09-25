@@ -69,11 +69,11 @@ app.post('/webhook/', function (req, res) {
 				sendUniqueMessage(sender, "You have selected " + text + " . Thank you!")
 			}
 		}
-		if (event.postback) {
-			let text = JSON.stringify(event.postback)
-			sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
-			continue
-		}
+		// if (event.postback) {
+		// 	let text = JSON.stringify(event.postback)
+		// 	sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
+		// 	continue
+		// }
 	}
 	res.sendStatus(200)
 })
