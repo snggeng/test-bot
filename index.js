@@ -41,14 +41,15 @@ app.post('/webhook/', function (req, res) {
 			sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
 			if (text === 'hi') {
 				sendUniqueMessage(sender, "hi, i'm test bot, what can i do for you?")
+				sendQuickReplyMessage()
 				continue
 			}
-			if (text === 'laundry') {
+			if (text === 'haircut') {
 				sendUniqueMessage(sender, "there are 5 laundry machines available in the laundromat right now. Please select a machine: 1, 2, 3, 4, 5")
 				continue
 			}
 			if (text === 'machine 1') {
-				sendUniqueMessage(sender, "You have selected machine 1. Your laundry will be completed in 30mins from now, at " + Date.now().getHours() )
+				sendUniqueMessage(sender, "You have selected machine 1. Your laundry will be completed in 30mins from now")
 				continue
 			}
 		}
@@ -138,6 +139,46 @@ function sendGenericMessage(sender) {
 			}
 		}
 	}
+	request({
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+		qs: {access_token:token},
+		method: 'POST',
+		json: {
+			recipient: {id:sender},
+			message: messageData,
+		}
+	}, function(error, response, body) {
+		if (error) {
+			console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+			console.log('Error: ', response.body.error)
+		}
+	})
+}
+
+function sendQuickReplyMessage(sender) {
+	let messageData = {
+		"recipient":{
+		    "id":"USER_ID"
+		  },
+		  "message":{
+		    "text":"Pick a color:",
+		    "quick_replies":[
+		      {
+		        "content_type":"text",
+		        "title":"Red",
+		        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED",
+		        "image_url":"http://petersfantastichats.com/img/red.png"
+		      },
+		      {
+		        "content_type":"text",
+		        "title":"Green",
+		        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN",
+		        "image_url":"http://petersfantastichats.com/img/green.png"
+		      }
+		    ]
+		  }
+		}
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
 		qs: {access_token:token},
