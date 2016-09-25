@@ -5,6 +5,8 @@ const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
 
+var serverURL = 'https://startups-sg.herokuapp.com/'
+
 app.set('port', (process.env.PORT || 5000))
 
 // parse application/x-www-form-urlencoded
@@ -25,6 +27,17 @@ app.get('/webhook/', function (req, res) {
 	}
 	res.send('Error, wrong token')
 })
+
+// to get data
+function getData () {
+  $.get(serverURL)
+    .done(function (data) {
+      data.forEach(function (datum) {
+				 let name = datum.name
+				 let available = datum.available
+			})
+		})
+	}
 
 // to post data
 app.post('/webhook/', function (req, res) {
@@ -125,17 +138,17 @@ function sendGenericMessage(sender) {
 						"url": "https://www.messenger.com",
 						"title": "web url"
 					}, {
-						"type": "postback",
-						"title": "Postback",
+						"type": "text",
+						"title": "22/06/2016",
 						"payload": "Payload for first element in a generic bubble",
 					}],
 				}, {
-					"title": "Second card",
-					"subtitle": "Element #2 of an hscroll",
+					"title": "Jack",
+					"subtitle": "15/03/2016",
 					"image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
 					"buttons": [{
-						"type": "postback",
-						"title": "Postback",
+						"type": "text",
+						"title": "Order",
 						"payload": "Payload for second element in a generic bubble",
 					}],
 				}]
