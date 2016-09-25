@@ -148,7 +148,7 @@ function sendGenericMessage(sender) {
 					"image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
 					"buttons": [{
 						"type": "postback",
-						"title": "Postback",
+						"title": "Order",
 						"payload": "hi",
 					}],
 				}]
