@@ -57,8 +57,8 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 			if (text === 'haircut') {
-				sendUniqueMessage(sender, "There are 5 hair stylists available now. Please select your favourite:")
-				setTimeOut(500, sendQuickReplyMessage(sender))
+				sendUniqueMessage(sender, "There are 5 hair stylists available now.")
+				setTimeOut(sendQuickReplyMessage(sender), 500)
 				continue
 			}
 			if (text === 'Gordon Levitt') {
