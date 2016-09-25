@@ -131,16 +131,18 @@ function sendGenericMessage(sender) {
 			"payload": {
 				"template_type": "generic",
 				"elements": [{
-					"title": "Day 1",
-					"subtitle": "the nastiest shit",
-					"image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+					"title": "09/27/2016",
+					"subtitle": "11:30AM - 12.30PM",
+					"image_url": "http://www.dossil.com/sites/default/files/hairdressers.jpg",
 					"buttons": [{
 						"type": "postback",
 						"title": "Confirm",
 						"payload": "Thank you!",
 					}],
 				}, {
-					"title": "Day 2",
+					"title": "09/28/2016",
+					"subtitle": "3:30PM - 4.30PM",
+					"image_url": "http://www.hairdressing.uk/wp-content/uploads/2013/03/Michelle-Griffin-Academy-at-Pro-Hair-Live-2012-1024x682.jpg",
 					"buttons": [{
 						"type": "postback",
 						"title": "Confirm",
