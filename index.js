@@ -128,7 +128,7 @@ function sendGenericMessage(sender) {
 		"attachment": {
 			"type": "template",
 			"payload": {
-				"template_type": "Generic",
+				"template_type": "generic",
 				"elements": [{
 					"title": "First card",
 					"subtitle": "Element #1 of an hscroll",
@@ -139,7 +139,7 @@ function sendGenericMessage(sender) {
 						"title": "web url"
 					}, {
 						"type": "postback",
-						"title": "Confirm",
+						"title": "Postback",
 						"payload": "DEVELOPER_DEFINED_PAYLOAD",
 					}],
 				}, {
@@ -148,7 +148,7 @@ function sendGenericMessage(sender) {
 					"image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
 					"buttons": [{
 						"type": "postback",
-						"title": "Confirm",
+						"title": "Postback",
 						"payload": "DEVELOPER_DEFINED_PAYLOAD",
 					}],
 				}]
