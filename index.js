@@ -41,16 +41,19 @@ app.post('/webhook/', function (req, res) {
 			sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
 			if (text === 'hi') {
 				sendUniqueMessage(sender, "hi, i'm test bot, what can i do for you?")
-				sendQuickReplyMessage(sender)
 				continue
 			}
 			if (text === 'haircut') {
-				sendUniqueMessage(sender, "there are 5 laundry machines available in the laundromat right now. Please select a machine: 1, 2, 3, 4, 5")
+				sendUniqueMessage(sender, "There are 5 hair stylists available now. Please select your favourite:")
+				sendQuickReplyMessage(sender)
 				continue
 			}
-			if (text === 'machine 1') {
-				sendUniqueMessage(sender, "You have selected machine 1. Your laundry will be completed in 30mins from now")
+			if (text === 'Gordon Levitt') {
+				sendUniqueMessage(sender, "You have selected Gordon. His available dates are x, y, z. please pick one")
 				continue
+			}
+			if (text === 'x' || 'y' || 'z') {
+				sendUniqueMessage(sender, "You have selected " + text + " . Thank you!")
 			}
 		}
 		if (event.postback) {
@@ -159,20 +162,28 @@ function sendGenericMessage(sender) {
 function sendQuickReplyMessage(sender) {
 	{
 	let messageData = {
-		    "text":"Pick a color:",
+		    "text":"Pick a hairstylist:",
 		    "quick_replies":[
 		      {
 		        "content_type":"text",
-		        "title":"Red",
-		        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED",
-		        "image_url":"http://petersfantastichats.com/img/red.png"
+		        "title":"Jane Lyliana",
+		        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_JANE"
 		      },
 		      {
 		        "content_type":"text",
-		        "title":"Green",
-		        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN",
-		        "image_url":"http://petersfantastichats.com/img/green.png"
-		      }
+		        "title":"Gordon Levitt",
+		        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GORDON"
+		      },
+					{
+						"content_type":"text",
+						"title":"Mike Mang",
+						"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_MIKE"
+					},
+					{
+						"content_type":"text",
+						"title":"Lulu Lex",
+						"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_LULU"
+					}
 		    ]
 		  }
 	request({
