@@ -65,7 +65,7 @@ app.post('/webhook/', function (req, res) {
 
 // recommended to inject access tokens as environmental variables, e.g.
 // const token = process.env.PAGE_ACCESS_TOKEN
-const token = "EAAIvrP1hOZAoBADxzZCtonZB2YyH3ZA2J0KJuVdtzBzCtZBL4qYPGMkZBoBT1u7gotTtaRkc7PfMShLg5xNRoeuH7k4Caot2cSOiQRoe5ROY15LuqAJFsWxZBSdZBc7shts5yjKVHyPSSz7uoIWr4ZBHsBNyQqZBpyEZCFBpECdYuW6LQZDZD"
+const token = "EAAIvrP1hOZAoBAJZBskMdXZAeuOJI8xaN7Yxa8hlIMV3YEadCro8CNmiK8wiN0nExXPMu6yXwdwmzheqnrsLKl0kHO6HHMZAoMg4bP6xFbZAmbcjezhTrYaxRd7QNFdRMQrmD6dj2361aPMQEdaAruLZCVJIIn7OPzMhFQyhYbZCQZDZD"
 
 function sendTextMessage(sender, text) {
 	let messageData = { text:text }
@@ -190,6 +190,7 @@ function sendQuickReplyMessage(sender) {
 			console.log('Error: ', response.body.error)
 		}
 	})
+}
 }
 
 
